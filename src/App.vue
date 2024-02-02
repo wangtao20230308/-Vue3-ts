@@ -1,29 +1,26 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+onMounted(() => {
+  document.title = '环球汇'
+})
 </script>
 
 <template>
-  <div>
-    <a href="#" target="_blank">
-      <img src="./assets/wangtao.jpeg" style="width: 500px;" />
-    </a>
-  </div>
-  <HelloWorld msg="山不在深、有涛则灵" />
+  <router-view />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style lang="scss" scoped>
+* {
+  padding: 0px;
+  margin: 0px;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
 }
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+body {
+    display: block;
 }
 </style>
