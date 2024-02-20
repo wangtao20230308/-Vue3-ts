@@ -9,6 +9,11 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+.bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
 * {
   padding: 0px;
   margin: 0px;
