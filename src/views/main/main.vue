@@ -8,7 +8,7 @@ import './main.css'
             <el-header>
                 <Header></Header>
             </el-header>
-            <el-main style="margin-top:50px">
+            <el-main style="margin-top:100px">
                 <router-view />
             </el-main>
             <el-footer style="position:absolute;bottom:50px;width:100%">

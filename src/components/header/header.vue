@@ -42,7 +42,10 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <el-tab-pane label="交易管理" name="second"></el-tab-pane>
         <el-tab-pane label="收款方" name="third"></el-tab-pane>
         <el-tab-pane label="设置" name="fourth"></el-tab-pane>
-      </el-tabs>
+    </el-tabs>
+    <div style="display: flex;align-items: center;justify-content: center;">
+    <ScrollText />
+    </div>
 </template>
 
 <style lang="scss" scoped>
