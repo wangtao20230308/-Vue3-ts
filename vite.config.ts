@@ -6,6 +6,7 @@ import AutoImport from "unplugin-auto-import/vite"
 import Components from 'unplugin-vue-components/vite';
 //element
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { viteMockServe } from 'vite-plugin-mock'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,5 +26,9 @@ export default defineConfig({
       dts: "src/components.d.ts",
       resolvers: [ElementPlusResolver()]
     }),
+    viteMockServe({
+      mockPath: "./src/mock/", // 
+      localEnabled: true // 是否开启开发环境
+    })
   ],
 })

@@ -2,9 +2,10 @@
 // import { ref } from 'vue'
 import { reactive } from "vue";
 import { LoginData } from "../type/login";
-import { login } from "../request/api";
+// import { login } from "../request/api";
 import { useRouter } from "vue-router";
 import { FormInstance, FormRules } from "element-plus";
+import { loginToken } from '../api/index.ts'
 
 const data = reactive(new LoginData())
 const rules = reactive<FormRules>({
@@ -22,18 +23,21 @@ const ruleFormRef = ref<FormInstance>()
 const router = useRouter()
 const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return
-    console.log("111");
 
     formEl.validate((valid) => {
         if (valid) {
             const params = JSON.parse(JSON.stringify(data.ruleForm))
-            console.log("222", login(data.ruleForm));
-            login(params).then((res) => {
+            loginToken(params).then((res) => {
                 console.log("res", res)
-                //保存token
-                localStorage.setItem("token", res.data.token)
-                //跳转
-                router.push('/home')
+                if (res.data.code == 0) {
+                    ElMessage.success(res.data.message)
+                    //保存token
+                    localStorage.setItem("token", res.data.token)
+                    //跳转
+                    router.push('/home')
+                } else {
+                    ElMessage.error(res.data.message)
+                }
             }).catch((err) => {
                 console.log("err", err);
             })
@@ -75,13 +79,19 @@ defineProps<{ msg: string }>()
 
 <style lang="scss" scoped>
 .login-box {
+    background: #576776 url("../assets/nature-1.jpg") no-repeat 36% 37%;
+    background-size: cover;
     width: 100%;
     height: 100%;
     text-align: center;
     padding: 1px;
 
     .demo-ruleForm {
-        width: 380px;
+        width: 400px;
+        position: absolute;
+        top: 60px;
+        right: 150px;
+        box-shadow: 3px 0 28px hsl(0deg 100% 2.16%);
         margin: 200px auto;
         background: #ffffff;
         padding: 40px;
