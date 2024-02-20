@@ -1,6 +1,6 @@
 <script setup lang="ts">
 onMounted(() => {
-  document.title = '环球汇'
+  document.title = '环球汇新平台'
 })
 </script>
 

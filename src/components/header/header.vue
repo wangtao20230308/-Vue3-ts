@@ -10,15 +10,20 @@ const activeName = ref('first')
 const handleClick = (tab: TabsPaneContext, event: Event) => {
     console.log(tab, event)
     console.log(tab.props.name)
-    if(tab.props.name == 'first'){
-        router.push({name:'home'})
-    } else if(tab.props.name == 'second'){
-        router.push({name:'account'})
-    } else if(tab.props.name == 'third'){
-        router.push({name:'account'})
+    if (tab.props.name == 'first') {
+        router.push({ name: 'home' })
+    } else if (tab.props.name == 'second') {
+        router.push({ name: 'account' })
+    } else if (tab.props.name == 'third') {
+        router.push({ name: 'account' })
     } else {
-        router.push({name:'test'})
-    } 
+        router.push({ name: 'test' })
+    }
+}
+const exitSystem = () => {
+    router.push({ name: 'login' })
+    // 为了登入安全、退出系统时清除登入凭证token
+    localStorage.removeItem('token')
 }
 </script>
 
@@ -33,7 +38,7 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <div>
             上次登录：<span>2024/02/20</span>
         </div>
-        <div>
+        <div @click="exitSystem">
             退出
         </div>
     </div>
@@ -44,15 +49,15 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <el-tab-pane label="设置" name="fourth"></el-tab-pane>
     </el-tabs>
     <div style="display: flex;align-items: center;justify-content: center;">
-    <ScrollText />
+        <ScrollText />
     </div>
 </template>
 
 <style lang="scss" scoped>
-.demo-tabs > .el-tabs__content {
-  padding: 32px;
-  color: #6b778c;
-  font-size: 32px;
-  font-weight: 600;
+.demo-tabs>.el-tabs__content {
+    padding: 32px;
+    color: #6b778c;
+    font-size: 32px;
+    font-weight: 600;
 }
 </style>

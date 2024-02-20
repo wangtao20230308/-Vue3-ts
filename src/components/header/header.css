@@ -6,6 +6,7 @@
     line-height: 40px;
     justify-content: flex-end;
     padding-right: 250px !important;
+    font-weight: 700;
 }
 .header div {
     margin-left: 35px;
