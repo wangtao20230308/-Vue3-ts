@@ -24,10 +24,14 @@ const handleClose = (item) => {
     <div class="flex gap-2">
         <el-tag v-for="item in tabList" :key="item.name" closable :disable-transitions="false" @close="handleClose(item)"
             @click="$router.push(item.path)" :effect="$route.name === item.name ? 'dark' : 'plain'"
-            style="cursor: pointer;margin-right: 5px">
+            style="cursor: pointer;margin-right: 5px;margin-bottom:26px;">
             {{ item.label }}
         </el-tag>
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.gap-2 {
+    border-bottom: 2px solid #545c64;
+}
+</style>

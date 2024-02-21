@@ -17,9 +17,16 @@ export const useTag = defineStore('tag', {
             ], 
             menuData: [
                 {
-                    path: '/',
+                    path: '/home',
                     name: 'home',
                     label: '首页',
+                    icon: 'Plus',
+                    url: 'Home/Home',
+                },
+                {
+                    path: '/page',
+                    name: 'page',
+                    label: '合作方清算',
                     icon: 'Plus',
                     url: 'Home/Home',
                     children: [

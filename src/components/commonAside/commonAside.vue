@@ -2,6 +2,7 @@
 import './commonAside.css'
 import {
     Setting,
+    House 
 } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 import router from '../../routes';
@@ -22,7 +23,7 @@ const handleClose = (key: string, keyPath: string[]) => {
 const isCollapse = ref(false)
 // 导航菜单数据
 
-const clickMenu = (subItem : any) => {
+const clickMenu = (subItem: any) => {
     console.log("subItem", subItem)
     router.push({
         path: subItem.path,
@@ -30,6 +31,8 @@ const clickMenu = (subItem : any) => {
     tabList.value.push(subItem)
     // tagStore.selectMenu()
 }
+const hasChildrenMenu = computed(() => menuData.value.filter((item) => item.children))
+const noChildrenMenu = computed(() => menuData.value.filter((item) => !item.children))
 
 </script>
 
@@ -40,7 +43,15 @@ const clickMenu = (subItem : any) => {
     </el-radio-group>
     <el-menu active-text-color="#ffd04b" background-color="#545c64" class="el-menu-vertical-demo" default-active="2"
         text-color="#fff" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-        <el-sub-menu :index="item.name ?? ''" v-for="item in menuData" :key="item.name">
+
+        <el-menu-item :index="item.name" v-for="item in noChildrenMenu" @click="clickMenu(item)">
+            <el-icon>
+                <House />
+                <!-- <component :is="item.icon" /> -->
+            </el-icon>
+             <span>{{ item.label }}</span>
+        </el-menu-item>
+        <el-sub-menu :index="item.name ?? ''" v-for="item in hasChildrenMenu" :key="item.name">
             <template #title>
                 <el-icon>
                     <Setting />
