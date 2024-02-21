@@ -61,7 +61,8 @@ defineProps<{ msg: string }>()
     <div class="login-box">
         <el-form ref="ruleFormRef" :model="data.ruleForm" :rules="rules" status-icon label-width="80px"
             class="demo-ruleForm">
-            <h2>环球汇商户新平台</h2>
+            <h2>合作方平台</h2>
+            <img src="../assets/jpay.jpg">
             <el-form-item label="账号：" prop="username">
                 <el-input v-model="data.ruleForm.username" autocomplete="off" />
             </el-form-item>

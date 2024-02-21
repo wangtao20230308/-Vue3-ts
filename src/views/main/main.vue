@@ -8,12 +8,13 @@ import './main.css'
             <el-header>
                 <Header></Header>
             </el-header>
-            <el-main style="margin-top:100px">
-                <router-view />
-            </el-main>
-            <el-footer style="position:absolute;bottom:50px;width:100%">
-                <Footer></Footer>
-            </el-footer>
+            <el-container>
+                <el-aside width="200px"><CommonAside></CommonAside></el-aside>
+                <el-main> 
+                    <CommonTags></CommonTags>
+                    <router-view />
+                </el-main>
+            </el-container>
         </el-container>
     </div>
 </template>

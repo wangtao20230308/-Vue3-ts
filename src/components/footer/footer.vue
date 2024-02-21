@@ -14,7 +14,7 @@ import './footer.css'
         </div>
         <div class="footer1">
             <div>合作机构</div>
-            <div>轻松汇款无须却步，支持多种主流货币，快捷汇达世界各地。</div>
+            <div><img src="../../assets/images/hezuojigou.jpg"></div>
         </div>
     </div>
 </template>

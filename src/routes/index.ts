@@ -32,7 +32,13 @@ let routes = [
                 // home
                 path: 'home',
                 name: 'home',
-                component: () => import('../views/home/home.vue')
+                component: () => import('../views/home/home.vue'),
+                // children: [
+                //     // home
+                //     path: 'page1',
+                //     name: 'page1',
+                //     component: () => import('../views/home/home.vue'),
+                // ]
             },
             {
                 // account
@@ -51,15 +57,39 @@ let routes = [
                 path: 'test',
                 name: 'test',
                 component: () => import('../views/test/test.vue')
-            }
+            },
+            {
+                // page1
+                path: 'page1',
+                name: 'page1',
+                component: () => import('../views/pageone/pageOne.vue')
+            },
+            {
+                // page2
+                path: 'page2',
+                name: 'page2',
+                component: () => import('../views/pageTwo/pageTwo.vue')
+            },
+            {
+                // page3
+                path: 'page3',
+                name: 'page3',
+                component: () => import('../views/pageThree/pageThree.vue')
+            },
+            {
+                // page4
+                path: 'page4',
+                name: 'page4',
+                component: () => import('../views/pageFour/pageFour.vue')
+            },
+            {
+                // page5
+                path: 'page5',
+                name: 'page5',
+                component: () => import('../views/pageFive/pageFive.vue')
+            },
         ]
     },
-    //{
-    //配置404页面
-    //path: '/:catchAll(.*)',
-    //name: '404',
-    //component: () => import(''),
-    //}
 ]
 // 路由
 const router = createRouter({

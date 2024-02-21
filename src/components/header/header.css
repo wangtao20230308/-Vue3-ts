@@ -1,27 +1,36 @@
 .header {
     display: flex;
-    background-color: #000000;
+    background-color: #545c64;
     color: #ffffff;
     height: 40px;
     line-height: 40px;
-    justify-content: flex-end;
-    padding-right: 250px !important;
+    justify-content: space-between;
     font-weight: 700;
+    padding: 8px 20px;
 }
-.header div {
+
+.header .right {
+    display: flex;
+
+}
+
+.header .right div {
     margin-left: 35px;
     font-size: 12px;
     cursor: pointer;
 }
+
 .el-tabs__nav-scroll {
     overflow: hidden;
     display: flex;
     justify-content: center;
     background-color: #ffffff;
 }
+
 .el-tabs {
     --el-tabs-header-height: 70px;
 }
+
 .el-tabs__item {
     font-size: 18px;
 }

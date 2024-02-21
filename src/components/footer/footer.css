@@ -9,3 +9,6 @@
 .footer .footer1 {
     margin: 0 25px;
 }
+.footer1 div:first-child {
+    margin-bottom: 10px;
+}
