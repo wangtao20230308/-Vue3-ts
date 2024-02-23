@@ -1,0 +1,31 @@
+.noFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    background-color: #abb3bd;
+    color: #ffffff;
+
+    .tips1 {
+        font-size: 80px;
+    }
+
+    .tips2 {
+        font-size: 20px;
+        margin: 30px;
+    }
+
+    .tips3 {
+        font-size: 20px;
+        margin: 30px;
+        color: #d4ff00;
+    }
+}
+
+.img {
+    width: 400px;
+    border-radius: 30px;
+}

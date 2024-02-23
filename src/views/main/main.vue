@@ -9,13 +9,18 @@ import './main.css'
                 <Header></Header>
             </el-header>
             <el-container>
-                <el-aside width="200px"><CommonAside></CommonAside></el-aside>
-                <el-main> 
+                <el-aside width="200px">
+                    <CommonAside></CommonAside>
+                </el-aside>
+                <el-main>
                     <CommonTags></CommonTags>
                     <CommonBreadcrumb></CommonBreadcrumb>
                     <router-view />
                 </el-main>
             </el-container>
+            <el-footer>
+                <Footer></Footer>
+            </el-footer>
         </el-container>
     </div>
 </template>
