@@ -14,7 +14,7 @@ export const useTag = defineStore('tag', {
                     icon: 's-home',
                     url: 'Home/Home',
                 },
-            ], 
+            ],
             menuData: [
                 {
                     path: '/home',
@@ -91,24 +91,39 @@ export const useTag = defineStore('tag', {
                         },
                     ]
                 }
-            ]
+            ],
+            // 初始值
+            chilrenMenuName: '首页'
         }
-        
+
     },
     // 相当于计算属性
     getters: {
-        doubleCount: (state) => {
-            return state.counter * 2
+        mainMenu: (state) => {
+            const menuName = state.chilrenMenuName
+            let mianMenuName = ''
+            state.menuData.forEach(item => {
+                item?.children?.forEach(subItem => {
+                    if (subItem.label === menuName) {
+                        mianMenuName = item.label
+                    }
+                })
+            })
+            return mianMenuName
         },
+        // chilrenMenuName: (state) => {
+        //     const menuName = state.tabList[state.tabList.length - 1].label
+        //     return menuName
+        // }
     },
     // 相当于vuex的 mutation + action，可以同时写同步和异步的代码
     actions: {
         selectMenu() {
-            this.counter++
+            // this.counter++
         },
         randomizeCounter() {
             setTimeout(() => {
-                this.counter = Math.round(100 * Math.random())
+                // this.counter = Math.round(100 * Math.random())
             }, 0);
         },
     },

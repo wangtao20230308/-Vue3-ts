@@ -12,6 +12,7 @@ import './main.css'
                 <el-aside width="200px"><CommonAside></CommonAside></el-aside>
                 <el-main> 
                     <CommonTags></CommonTags>
+                    <CommonBreadcrumb></CommonBreadcrumb>
                     <router-view />
                 </el-main>
             </el-container>

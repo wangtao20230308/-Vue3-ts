@@ -30,6 +30,9 @@ const clickMenu = (subItem: any) => {
     })
     tabList.value.push(subItem)
     // tagStore.selectMenu()
+    tagStore.$patch((state) => {
+        state.chilrenMenuName = subItem.label
+    })
 }
 const hasChildrenMenu = computed(() => menuData.value.filter((item) => item.children))
 const noChildrenMenu = computed(() => menuData.value.filter((item) => !item.children))

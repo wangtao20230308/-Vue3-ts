@@ -8,8 +8,11 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     CommonAside: typeof import('./components/commonAside/commonAside.vue')['default']
+    CommonBreadcrumb: typeof import('./components/commonBreadcrumb/commonBreadcrumb.vue')['default']
     CommonTags: typeof import('./components/commonTags/commonTags.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
+    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElForm: typeof import('element-plus/es')['ElForm']
@@ -29,6 +32,7 @@ declare module 'vue' {
     Header: typeof import('./components/header/header.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     Login: typeof import('./components/Login.vue')['default']
+    NotFound: typeof import('./components/notFound/notFound.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollText: typeof import('./components/scrollText/scrollText.vue')['default']

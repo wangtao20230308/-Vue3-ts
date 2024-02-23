@@ -46,13 +46,13 @@ let routes = [
                 name: 'account',
                 component: () => import('../views/account/account.vue')
             },
-             {
+            {
                 // account
                 path: 'account',
                 name: 'account',
                 component: () => import('../views/account/account.vue')
             },
-             {
+            {
                 // test
                 path: 'test',
                 name: 'test',
@@ -90,6 +90,11 @@ let routes = [
             },
         ]
     },
+    {
+        //404请求不存在的路径
+        path: '/:pathMatch(.*)*',
+        component: () => import('../components/notFound/notFound.vue')
+    }
 ]
 // 路由
 const router = createRouter({
