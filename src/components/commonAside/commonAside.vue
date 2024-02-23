@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import './commonAside.css'
 import {
-    Setting,
     House 
 } from '@element-plus/icons-vue'
 import { ref } from 'vue'
@@ -57,13 +56,18 @@ const noChildrenMenu = computed(() => menuData.value.filter((item) => !item.chil
         <el-sub-menu :index="item.name ?? ''" v-for="item in hasChildrenMenu" :key="item.name">
             <template #title>
                 <el-icon>
-                    <Setting />
-                    <!-- <component :is="item.icon" /> -->
+                    <!-- <Setting /> -->
+                    <component :is="item.icon" />
                 </el-icon>
                 <span>{{ item.label }}</span>
             </template>
             <el-menu-item-group title="" v-for="subItem in item.children" :key="subItem.name">
-                <el-menu-item :index="subItem.name" @click="clickMenu(subItem)">{{ subItem.label }}</el-menu-item>
+                <el-menu-item :index="subItem.name" @click="clickMenu(subItem)">
+                     <el-icon>
+                        <component :is="subItem.icon" />
+                    </el-icon>
+                    <span>{{ subItem.label }}</span>
+                </el-menu-item>
             </el-menu-item-group>
         </el-sub-menu>
     </el-menu>
