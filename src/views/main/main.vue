@@ -9,10 +9,10 @@ import './main.css'
                 <Header></Header>
             </el-header>
             <el-container>
-                <el-aside width="200px">
+                <el-aside style="width: auto;">
                     <CommonAside></CommonAside>
                 </el-aside>
-                <el-main>
+                <el-main style="padding: 0 20px;">
                     <CommonTags></CommonTags>
                     <CommonBreadcrumb></CommonBreadcrumb>
                     <router-view />

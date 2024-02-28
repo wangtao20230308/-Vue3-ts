@@ -34,8 +34,7 @@ const handleClick = (item: any) => {
 <template>
     <div class="flex gap-2">
         <el-tag v-for="item in tabList" :key="item.name" closable :disable-transitions="false" @close="handleClose(item)"
-            @click="handleClick(item)" :effect="$route.name === item.name ? 'dark' : 'plain'"
-            style="cursor: pointer;margin-right: 5px;margin-bottom:10px;">
+            @click="handleClick(item)" :effect="$route.name === item.name ? 'dark' : 'plain'" style="cursor: pointer;">
             {{ item.label }}
         </el-tag>
     </div>
@@ -43,6 +42,12 @@ const handleClick = (item: any) => {
 
 <style lang="scss" scoped>
 .gap-2 {
-    border-bottom: 1px solid #409eff;
+    border-bottom: 3px solid #ffffff;
+}
+.el-tag {
+    height: 30px;
+    --el-icon-size: 20px;
+    padding: 0px 8px 0 18px;
+    border-radius:0;
 }
 </style>

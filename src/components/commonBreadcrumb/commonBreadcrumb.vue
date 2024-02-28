@@ -1,6 +1,6 @@
 <template>
     <el-breadcrumb :separator-icon="ArrowRightBold">
-        <el-breadcrumb-item>{{ mainMenu }}</el-breadcrumb-item>
+        <el-breadcrumb-item style="font-weight: 700;">{{ mainMenu }}</el-breadcrumb-item>
         <el-breadcrumb-item>{{ chilrenMenuName
         }}</el-breadcrumb-item>
     </el-breadcrumb>

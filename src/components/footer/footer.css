@@ -1,7 +1,7 @@
 .footer {
     font-size: 12px;
     background-color: #545c64;
-    height: 100px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,4 +17,7 @@
 
 .footer1 div:first-child {
     margin-bottom: 10px;
+}
+.el-footer {
+    --el-footer-padding: 0;
 }
