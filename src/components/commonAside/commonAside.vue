@@ -52,10 +52,6 @@ const clickMenuIcon = () => {
 </script>
 
 <template>
-    <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;margin-top: 17px;">
-        <el-radio-button :label="false">展开菜单</el-radio-button>
-        <el-radio-button :label="true">关闭菜单</el-radio-button>
-    </el-radio-group> -->
     <el-menu active-text-color="#ffd04b" background-color="#545c64" class="el-menu-vertical-demo" default-active="2"
         text-color="#fff" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
         <div class="cooprerate">
@@ -112,5 +108,8 @@ const clickMenuIcon = () => {
 .menuIcon {
     font-size: 24px;
     cursor: pointer;
+}
+.menuIcon:hover{
+    color: #409EFF;
 }
 </style>

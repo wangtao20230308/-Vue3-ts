@@ -2,11 +2,26 @@
 import './header.css'
 
 import router from '../../routes';
+import { useTag } from '../../store/tag'
+
+const tagStore = useTag()
 
 const exitSystem = () => {
     router.push({ name: 'login' })
     // 为了登入安全、退出系统时清除登入凭证token
     localStorage.removeItem('token')
+    // 退出登入后重置tag标签和面包屑数据
+    tagStore.$patch((state) => {
+        state.tabList = [{
+            path: '/home',
+            name: 'home',
+            label: '首页',
+            icon: 's-home',
+            url: 'Home/Home',
+        },]
+        state.chilrenMenuName = '首页'
+    })
+
 }
 </script>
 
